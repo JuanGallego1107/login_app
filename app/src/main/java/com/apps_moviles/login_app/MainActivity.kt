@@ -4,13 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.apps_moviles.login_app.navigation.NavigationWrapper
 import com.apps_moviles.login_app.ui.theme.Login_appTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,26 +13,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Login_appTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
-                    LoginScreen()
-                }
+                NavigationWrapper()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Login_appTheme {
-        Greeting("Android")
     }
 }
